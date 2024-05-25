@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    font-family: "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif,"PT Serif", serif;
     font-size: 14px;
     line-height: 140%;
 }
@@ -113,4 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .link-color {
     color: dodgerblue;
+}
+a:hover{
+    color: #608e76;
 }

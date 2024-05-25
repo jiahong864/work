@@ -7,7 +7,9 @@ useSeoMeta({
 </script>
 
 <template>
+  <AppHeader />
   <NuxtPage />
+  <AppFooter />
 </template>
 
 <style lang="scss">
