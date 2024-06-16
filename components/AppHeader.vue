@@ -1,68 +1,39 @@
 <script setup lang="ts">
-    const {data:channelList} = await useFetch('/api/channel')
+    const navbarRight=ref([
+        'Find a VisionHelp Doctor',
+        'Blog',
+        'Residencies'
+    ])
+    const navbarBottom  = ref([
+        { id: 1, name: 'ABOUT' },
+        { id: 2, name: 'AMBLYOPIA' },
+        { id: 3, name: 'CONCUSSION' },
+        { id: 4, name: 'STRABISMUS' },
+        { id: 5, name: 'VISION & LEARNING' },
+        { id: 6, name: 'SCREEN TIME' },
+        { id: 7, name: 'AUTISM' },
+        { id: 8, name: 'VIDEOS' }
+    ])
 </script>
 <template>
     <header>
-        <div class="top-header">
+        <div class="flex justify-center p-y-40px relative mx-auto max-w-1360px py-40px  items-center">
             <nuxt-link to="/">
-                <img src="@/assets/images/cropped-logo-visionhelp.png" alt="">
+                <img src="@/assets/images/logo.png" alt="">
             </nuxt-link>
-            <div class="top-navigation">
-                <ul class="top-navigation-container">
-                    <li><nuxt-link to="/">Find a VisionHelp Doctor</nuxt-link></li>
-                    <li><nuxt-link to="/">Blog</nuxt-link></li>
-                    <li><nuxt-link to="/">Residencies</nuxt-link></li>
-                    <li><nuxt-link to="/">图标</nuxt-link></li>
-                    <li><nuxt-link to="/"><Search style="width: 1em; height: 1em; margin-right: 8px" /></nuxt-link></li>
+            <div class="absolute right-0">
+                <ul class="flex">
+                    <li class="pr-10px" v-for="item in navbarRight"><nuxt-link to="/">{{ item }}</nuxt-link></li>
+                    <li class="w-18px h-18px simple-line-icons:magnifier"><nuxt-link to="/" class="simple-line-icons:magnifier"></nuxt-link></li>
+                    <button class="simple-line-icons:magnifier text-black text-4xl gap-x-4"></button>
+                    <div class="simple-line-icons:magnifier text-orange-400 w-18px"></div>
                 </ul>
             </div>
         </div>
-        <nav>
-            <ul  class="nav-ul">
-                <li v-for="item in channelList" :key="item.id"><nuxt-link to="/">{{ item.name }}</nuxt-link></li>
+        <nav class="border-y-1px border-y-solid border-gray-300 text-13px tracking-3px font-600">
+            <ul  class="flex justify-center py-50px">
+                <li class="px-35px border-r-1px border-r-solid border-gray-300 last:border-0" v-for="item in navbarBottom" :key="item.id"><nuxt-link to="/">{{ item.name }}</nuxt-link></li>
             </ul>
         </nav>
     </header>
 </template>
-<style>
-    .top-header{
-        display: flex;
-        justify-content: center;
-        max-width: 1360px;
-        position: relative;
-        margin: 0 auto;
-        padding:40px 0;
-
-    }
-    .top-navigation{
-        position: absolute;
-        right: 0
-    }
-    .top-navigation-container{
-        display: flex;
-    }
-    .top-navigation-container li{
-        padding-right: 10px;
-        font-family: "PT Serif", serif;
-    }
-    nav{
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        font-size: 13px;
-        letter-spacing: 3px;
-        font-weight: 700;
-    }
-    .nav-ul{
-        display: flex;
-        justify-content: center;
-        padding:50px 0;
-        
-    }
-    .nav-ul li{
-        padding: 0 34px;
-        border-right: 1px solid rgb(0, 0, 0,0.2);
-    }
-    .nav-ul li:last-child{
-        border: 0;
-    }
-</style>

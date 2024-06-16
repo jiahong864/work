@@ -11,7 +11,3 @@ useSeoMeta({
   <NuxtPage />
   <AppFooter />
 </template>
-
-<style lang="scss">
-@import './assets/styles/main.scss'
-</style>

@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <Content1 />
-    <Content2 />
-    <Content3 />
+    <Content />
+    <Description />
+    <SupplementaryContent />
 </template>
 
 <style scoped>
