@@ -25,8 +25,6 @@
                 <ul class="flex">
                     <li class="pr-10px" v-for="item in navbarRight"><nuxt-link to="/">{{ item }}</nuxt-link></li>
                     <li class="w-18px h-18px simple-line-icons:magnifier"><nuxt-link to="/" class="simple-line-icons:magnifier"></nuxt-link></li>
-                    <button class="simple-line-icons:magnifier text-black text-4xl gap-x-4"></button>
-                    <div class="simple-line-icons:magnifier text-orange-400 w-18px"></div>
                 </ul>
             </div>
         </div>

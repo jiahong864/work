@@ -1,37 +1,47 @@
 <script setup lang="ts">
+    import EmilyImg from '~/assets/images/emily.jpg'
+    import ActivitiesImg from '~/assets/images/Activities.jpg'
+    import AdobeStockImg from '~/assets/images/AdobeStock.jpg'
+    import AccommodationImg from '~/assets/images/Accommodation.jpg'
+    import SilhouetteImg from '~/assets/images/Silhouette.jpg'
+    import BappelImg from '~/assets/images/bappel.jpg'
+
+
+
+
     const SupplementaryLeft = ref([
         { id: 1,
-            // image: require('~/assets/images/emily.jpg'),
+            image: EmilyImg,
             category: 'AMBLYOPIA', 
             title: 'Advanced Amblyopia Treatment…for faster and better outcomes', 
             description: 'At age 18, Emily is a bright and talented young lady. ...'
         },
         { id: 2,
-            // image: require('@/assets/images/Activities.jpg'),
+            image: ActivitiesImg,
             category: 'AUTISM - SENSORY INTEGRATION', 
             title: 'Activities to Develop Visual Spatial Knowledge: General Movement – Part 2', 
             description: ''
         },
         { id: 3,
-            // image: require('@/assets/images/AdobeStock.jpg'),
+            image: AdobeStockImg,
             category: 'AMBLYOPIA', 
             title: 'Amblyopia Treatment – Eye Patching Alone is No Longer the Standard of Care', 
             description: 'Amblyopia, otherwise known as "lazy eye", is the most common cause ...'
         },
         { id: 4,
-            // image: require('~/assets/images/Accommodation.jpg'),
+            image: AccommodationImg,
             category: 'VISION AND LEARNING', 
             title: 'Accommodation’s 3-A’s…The Triple Play for Reading and Learning', 
             description: 'Even after practicing for 30 years in the optometric specialty of ...'
         },
         { id: 5,
-            // image: require('@/assets/images/silhouette.jpg'),
+            image: SilhouetteImg,
             category: 'FEATURED', 
             title: 'Activities to Develop Visual Spatial Knowledge: Mental Map of Body', 
             description: ''
         },
         { id: 6,
-            // image: require('@/assets/images/bappel.jpg'),
+            image: BappelImg,
             category: 'FEATURED', 
             title: 'At First Sight', 
             description: 'Combining optometric vision therapy with occupational therapy results in an integrated ...'
@@ -69,7 +79,7 @@
             <div class="grid grid-cols-3 gap-3">
                 <div class="col-span-1 bg-[#F4F4F4]" v-for="item in SupplementaryLeft">
                     <div class="w-full h-160px">
-                        <img src="@/assets/images/emily.jpg" alt="" class="w-full h-full object-cover">
+                        <img :src="item.image" alt="" class="w-full h-full object-cover">
                     </div>
                     <div class="p-20px h-250px">
                         <div class="py-10px text-10px tracking-2px">{{ item.category }}</div>

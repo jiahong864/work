@@ -1,24 +1,29 @@
 <script setup lang="ts">
+    import ScreenImg from '~/assets/images/Screen-time.jpg'
+    import AmblyopiaImg from '~/assets/images/Amblyopia.jpg'
+    import ConcussionImg from '~/assets/images/Concussion.jpg'
+
     const contentLeft = ref([
         { id: 1,
-            // image: require('~/assets/images/Screen-time.jpg'),
+            image: ScreenImg,
             category: 'FEATURED', 
             title: 'Screen Time Library', 
-            description: 'The place for advanced understanding of the human interface with screen time.'
+            description: 'The place for advanced understanding of the human interface with screen time.',
         },
         { id: 2,
-            // image: require('@/assets/images/Amblyopia.jpg'),
+            image: AmblyopiaImg,
             category: 'FEATURED', 
             title: 'Amblyopia Library', 
             description: 'The place for doctors and patients to learn more about advanced treatment in Amblyopia care.'
         },
         { id: 3,
-            // image: require('@/assets/images/Concussion.jpg'),
+            image: ConcussionImg,
             category: 'FEATURED', 
             title: 'Concussion Library', 
             description: 'The place for advanced understanding of concussion and how the visual system can be affected.'
         },
     ])
+
     const contentRight = ref([
         {
             id:1,
@@ -54,8 +59,7 @@
             </div>
             <div class="col-span-1 bg-[#F4F4F4]" v-for="item in contentLeft" :key="item.id">
                 <div class="w-full h-120px">
-                    <!-- <img :src="item.image" class="w-full h-full object-cover"> -->
-                    <img src="~/assets/images/Screen-time.jpg" class="w-full h-full object-cover">
+                    <img :src="item.image" class="w-full h-full object-cover">
                 </div>
                 <div class="p-20px h-255px">
                     <div class="py-10px text-10px tracking-2px">{{ item.category }}</div>
